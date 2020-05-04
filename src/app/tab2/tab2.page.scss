@@ -1,0 +1,38 @@
+.cont-b{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .btn{
+        width: 90px;
+        height: 30px;
+        position: relative;
+
+        &::after,&::before{
+            content: "";
+            position: absolute;
+            display: block;
+            background: blue;
+        }
+        &::before{
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            //@extend: 0 restov() $border-color;
+        }
+        &::after{
+            top: 0;
+            width: 3px;
+            //box-shadow: restoh() 0 $border-color;
+            height: 0;
+        }
+        &:hover{
+            &::before{
+                width: 100%;
+            }
+            &::after{
+                height: 100%;
+            }
+        }
+    }
+
+}
